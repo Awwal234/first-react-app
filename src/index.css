@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Roboto', sans-serif;
+	user-select: none;
+}
+body::-webkit-scrollbar {
+	width: 3px;
+	background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+	width: 3px;
+	background: #1f2937;
+}
+link {
+	text-decoration: none;
+}
+.error_align {
+	font-weight: 700;
+	font-family: 'Courier New', Courier, monospace;
+}

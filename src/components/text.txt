@@ -1,0 +1,5 @@
+text-indigo-600
+indigo
+blue
+black
+font-500 font-600 font-700
