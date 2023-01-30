@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io'
-import identityimg from '../../public/img/identityimg.png'
+import identityimg from '/img/identityimg.png'
 
 const SecurelyTransact = () => {
   const letter = 'Eyewitnex is an escrow platform that stands as a third party between buyesrs and sellers to ensure both parties are secured against scam'

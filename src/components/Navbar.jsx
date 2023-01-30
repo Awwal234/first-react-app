@@ -1,5 +1,6 @@
-import React from "react";
+import { React, useState} from "react";
 import { BsFilterRight } from "react-icons/bs";
+import { VscChromeClose } from "react-icons/vsc";
 
 const Navbar = () => {
  
@@ -8,6 +9,9 @@ const Navbar = () => {
     'About': 'About Us',
     'FAQs': 'FAQs',
   }
+  
+  const [toggle, settoggle] = useState(false);
+  
 
   return (
     <div>
@@ -22,8 +26,22 @@ const Navbar = () => {
                 <div className="w-fit h-fit font-[600] py-[10px] px-[40px] border cursor-pointer border-blue-600 rounded-full text-[15px] text-blue-600">Login</div>
                 <div className="w-fit h-fit font-[600] py-[10px] px-[40px] border cursor-pointer border-blue-600 rounded-full text-[15px] text-blue-600">Sign up</div>
             </div>
-            <div className="lg:hidden"><BsFilterRight className="font-[600] lg:hidden text-blue-600 w-[25px] h-[25px]"/></div>
+            <div className="lg:hidden"><BsFilterRight onClick={(e)=>settoggle(!toggle)} className="font-[600] lg:hidden text-blue-600 w-[25px] h-[25px]"/></div>
         </div>
+        
+        <div className={`${toggle ? 'block':'hidden'} lg:hidden w-full z-[1000] px-[20px] py-[30px] fixed h-full top-0 bg-gray-50 left-0`}>
+          <div className="float-right"><VscChromeClose onClick={(e)=>settoggle(!toggle)}  className="w-[20px] h-[20px] text-blue-800 font-[600]" /></div>
+          <div className="mt-[60px] space-y-[40px] mx-auto text-center font-[600] text-[17px]">
+            <div>{navLinks.Blog}</div>
+            <div>{navLinks.About}</div>
+            <div>{navLinks.FAQs}</div>
+            <div className="mx-auto space-y-[40px] text-center">
+                <div className="w-fit h-fit mx-auto font-[600] py-[10px] px-[40px] border cursor-pointer border-blue-600 rounded-full text-[15px] text-blue-600">Login</div>
+                <div className="w-fit h-fit mx-auto font-[600] py-[10px] px-[40px] border cursor-pointer border-blue-600 rounded-full text-[15px] text-blue-600">Sign up</div>
+            </div>
+          </div>
+        </div>
+        {/* menu way */}
     </div>
   );
 };
